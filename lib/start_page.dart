@@ -1,6 +1,7 @@
-import 'package:design/home_page.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+
+import 'bottom_nav_bar.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});
@@ -44,7 +45,7 @@ class _StartPageState extends State<StartPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomePage()),
+                            builder: (context) => const BottomNavBar()),
                       );
                     },
                 ),

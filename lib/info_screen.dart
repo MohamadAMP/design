@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class InfoScreen extends StatefulWidget {
   const InfoScreen({super.key});
@@ -13,13 +11,12 @@ class _InfoScreenState extends State<InfoScreen> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
 
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(
         children: [
-          Text(
+          const Text(
             "Tips",
             textAlign: TextAlign.left,
             style: TextStyle(

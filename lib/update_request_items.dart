@@ -1,4 +1,3 @@
-import 'package:design/transaction_history_widget.dart';
 import 'package:design/update_inner_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +19,6 @@ class _UpdateRequestItemsState extends State<UpdateRequestItems> {
   var isExpanded = false;
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
 
     return Theme(
@@ -40,24 +38,20 @@ class _UpdateRequestItemsState extends State<UpdateRequestItems> {
         collapsedIconColor: Colors.black,
         collapsedTextColor: Colors.black,
         textColor: Colors.black,
-        title: Container(
-          // color:
-          //     isExpanded ? widget.color.withOpacity(0.4) : Colors.transparent,
-          child: Row(
-            children: [
-              ImageIcon(
-                AssetImage("assets/icons/${widget.icon}.png"),
-                color: widget.color,
-                size: 32,
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              Text(widget.title),
-            ],
-          ),
+        title: Row(
+          children: [
+            ImageIcon(
+              AssetImage("assets/icons/${widget.icon}.png"),
+              color: widget.color,
+              size: 32,
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Text(widget.title),
+          ],
         ),
-        childrenPadding: EdgeInsets.symmetric(horizontal: 20),
+        childrenPadding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
           ListView.separated(
             padding: const EdgeInsets.all(0),
@@ -65,10 +59,10 @@ class _UpdateRequestItemsState extends State<UpdateRequestItems> {
             shrinkWrap: true,
             itemCount: 4,
             itemBuilder: (context, index) {
-              return UpdateInnerWidget();
+              return const UpdateInnerWidget();
             },
             separatorBuilder: (BuildContext context, int index) {
-              return SizedBox(
+              return const SizedBox(
                 height: 10,
               );
             },

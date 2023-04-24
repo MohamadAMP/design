@@ -43,7 +43,7 @@ class _UpdateRequestState extends State<UpdateRequest> {
         child: Container(
           height: 150,
           alignment: Alignment.center,
-          child: Container(
+          child: SizedBox(
             height: 60,
             width: width * 0.8,
             child: ElevatedButton(
