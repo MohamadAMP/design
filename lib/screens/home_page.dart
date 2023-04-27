@@ -1,5 +1,5 @@
-import 'package:design/request_widget.dart';
-import 'package:design/transaction_history_widget.dart';
+import 'package:design/widgets/request_widget.dart';
+import 'package:design/widgets/transaction_history_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_switch/flutter_switch.dart';
@@ -11,7 +11,18 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  late TabController tabController;
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(
+      initialIndex: 0,
+      length: 3,
+      vsync: this,
+    );
+  }
+
   var status = false;
   @override
   Widget build(BuildContext context) {
@@ -103,6 +114,79 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.black,
                 fontSize: 32,
                 fontFamily: 'Nunito',
+              ),
+            ),
+            SizedBox(
+              height: height * 0.02,
+            ),
+            SizedBox(
+              height: 40,
+              child: TabBar(
+                controller: tabController,
+                unselectedLabelColor: Colors.redAccent,
+                indicatorSize: TabBarIndicatorSize.label,
+                indicator: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: Color(0xFFEDEDED)),
+                tabs: [
+                  Tab(
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: const Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Open (3)",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontFamily: 'Nunito',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Tab(
+                    child: Container(
+                      // padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: const Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Accepted (3)",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontFamily: 'Nunito',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Tab(
+                    child: Container(
+                      // padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: const Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Completed (17)",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontFamily: 'Nunito',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             SizedBox(

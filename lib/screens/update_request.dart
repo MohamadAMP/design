@@ -1,4 +1,4 @@
-import 'package:design/update_request_items.dart';
+import 'package:design/widgets/update_request_items.dart';
 import 'package:flutter/material.dart';
 
 class UpdateRequest extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:design/update_request.dart';
+import 'package:design/screens/update_request.dart';
 import 'package:flutter/material.dart';
 
 class RequestCard extends StatefulWidget {
@@ -103,7 +103,7 @@ class _RequestCardState extends State<RequestCard> {
                     ),
                   ),
                   child: const Text(
-                    'Accept',
+                    'View',
                     style: TextStyle(
                         color: Color(0xFFF4365D),
                         fontSize: 24,
